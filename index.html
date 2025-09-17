@@ -1,117 +1,113 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fractod Links</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Fractod — Links</title>
+  <!-- favicon хүсвэл доорх мөрийг идэвхжүүлээд favicon.ico-г root-д байрлуул -->
+  <!-- <link rel="icon" href="favicon.ico" /> -->
   <style>
-    body {
-      background-color: #000;
-      color: #fff;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 50px;
+    :root{
+      --bg:#000;           /* background */
+      --card:#0b0b0b;      /* card surface */
+      --text:#fff;         /* text color */
+      --muted:#9a9a9a;     /* secondary text */
+      --accent:#FFD600;    /* gold */
+      --radius:16px;
+      --btn-h:56px;
+      --shadow:0 12px 30px rgba(0,0,0,.55);
+      --ring:0 0 0 1px rgba(255,255,255,.06) inset;
+      --t:.28s cubic-bezier(.22,.61,.36,1);
     }
-    .logo img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      border: 2px solid gold;
-      margin-bottom: 15px;
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;background:radial-gradient(1200px 800px at 50% -20%,rgba(255,214,0,.06),transparent 60%),var(--bg);
+      color:var(--text);font:16px/1.5 Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;
     }
-    h1 {
-      font-size: 28px;
-      margin: 10px 0 5px 0;
+    .wrap{min-height:100%;display:flex;align-items:center;justify-content:center;padding:28px}
+    .card{
+      width:100%;max-width:720px;
+      background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.015));
+      border-radius:24px;padding:28px 24px 22px;box-shadow:var(--shadow);
+      backdrop-filter:blur(18px);
     }
-    .subtitle {
-      color: #aaa;
-      font-size: 14px;
-      margin-bottom: 25px;
+    .brand{display:flex;flex-direction:column;align-items:center;gap:10px;margin-bottom:8px}
+    .logo{
+      width:128px;height:128px;border-radius:50%;
+      display:grid;place-items:center;background:#000;border:2px solid rgba(255,214,0,.18);
+      box-shadow:0 6px 18px rgba(0,0,0,.45);overflow:hidden;
     }
-    .btn {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 300px;
-      margin: 10px auto;
-      padding: 12px 15px;
-      background: #111;
-      border: 1px solid #333;
-      border-radius: 8px;
-      text-decoration: none;
-      color: #fff;
-      transition: 0.3s;
+    .logo img{width:96%;height:96%;object-fit:contain;display:block}
+    .title{font-weight:800;letter-spacing:.6px;font-size:28px;margin:2px 0}
+    .sub{color:var(--muted);font-size:13px;margin-bottom:16px}
+
+    .links{display:flex;flex-direction:column;gap:12px;margin-top:8px}
+    .btn{
+      height:var(--btn-h);display:flex;align-items:center;gap:14px;
+      padding:0 16px;border-radius:14px;text-decoration:none;color:var(--text);
+      background:linear-gradient(180deg,#121212,#0d0d0d);
+      box-shadow:var(--ring), inset 0 -2px 0 rgba(255,255,255,.02);
+      transition:transform var(--t), box-shadow var(--t), background var(--t);
     }
-    .btn:hover {
-      background: gold;
-      color: #000;
-      transform: scale(1.05);
+    .btn:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(255,214,0,.22)}
+    .btn .icon{
+      width:36px;height:36px;border-radius:10px;display:grid;place-items:center;
+      background:rgba(255,214,0,.08);font-weight:800;color:var(--accent)
     }
-    .icon {
-      font-weight: bold;
-      width: 40px;
-      text-align: left;
-    }
-    .label {
-      flex: 1;
-      text-align: left;
-      font-weight: bold;
-    }
-    .small {
-      font-size: 12px;
-      color: #aaa;
-    }
-    footer {
-      margin-top: 40px;
-      font-size: 12px;
-      color: #666;
-    }
+    .btn .label{flex:1;text-align:left;font-weight:700}
+    .btn .hint{color:var(--muted);font-size:12px}
+    .btn.gold:hover{background:linear-gradient(180deg,rgba(255,214,0,.22),rgba(255,214,0,.12))}
+    footer{margin-top:18px;text-align:center;color:var(--muted);font-size:12px}
+    @media (max-width:420px){.logo{width:110px;height:110px}.title{font-size:22px}.btn{height:52px}}
   </style>
 </head>
 <body>
-  <div class="logo">
-    <img src="fractod_symbol.png" alt="Fractod logo">
+  <div class="wrap">
+    <div class="card">
+      <header class="brand">
+        <!-- Лого PNG-аа repo-гийн root-д энэ нэрээр тавь: fractod_symbol_transparent_final.png -->
+        <div class="logo">
+          <img src="fractod_symbol_transparent_final.png" alt="Fractod logo">
+        </div>
+        <div class="title">Fractod</div>
+        <div class="sub">Fractals · Trading · Growth</div>
+      </header>
+
+      <main class="links">
+        <!-- Telegram -->
+        <a class="btn gold" href="https://t.me/fractod13" target="_blank" rel="noopener">
+          <div class="icon">TG</div>
+          <div class="label">Telegram</div>
+          <div class="hint">Channel</div>
+        </a>
+        <!-- Instagram -->
+        <a class="btn gold" href="https://www.instagram.com/fractod_/?hl=en" target="_blank" rel="noopener">
+          <div class="icon">IG</div>
+          <div class="label">Instagram</div>
+          <div class="hint">@fractod_</div>
+        </a>
+        <!-- YouTube -->
+        <a class="btn gold" href="https://youtube.com/@fractod?si=DwtgTw_GSh7q1e8e" target="_blank" rel="noopener">
+          <div class="icon">YT</div>
+          <div class="label">YouTube</div>
+          <div class="hint">Channel</div>
+        </a>
+        <!-- Хэрэв доодхоос хэрэггүй нь байвал устгачихад OK -->
+        <a class="btn" href="https://facebook.com/" target="_blank" rel="noopener">
+          <div class="icon">FB</div>
+          <div class="label">Facebook</div>
+          <div class="hint">Page</div>
+        </a>
+        <a class="btn" href="https://discord.com/" target="_blank" rel="noopener">
+          <div class="icon">DC</div>
+          <div class="label">Discord</div>
+          <div class="hint">Community</div>
+        </a>
+      </main>
+
+      <footer>Made by Fractod · All links open in a new tab</footer>
+    </div>
   </div>
-  <h1>Fractod</h1>
-  <div class="subtitle">Fractals · Trading · Growth</div>
-
-  <!-- Telegram -->
-  <a class="btn" href="https://t.me/fractod13" target="_blank" rel="noopener">
-    <div class="icon">TG</div>
-    <div class="label">Telegram</div>
-    <div class="small">Channel</div>
-  </a>
-
-  <!-- Instagram -->
-  <a class="btn" href="https://www.instagram.com/fractod_/?hl=en" target="_blank" rel="noopener">
-    <div class="icon">IG</div>
-    <div class="label">Instagram</div>
-    <div class="small">@fractod_</div>
-  </a>
-
-  <!-- YouTube -->
-  <a class="btn" href="https://youtube.com/@fractod?si=DwtgTw_GSh7q1e8e" target="_blank" rel="noopener">
-    <div class="icon">YT</div>
-    <div class="label">YouTube</div>
-    <div class="small">Channel</div>
-  </a>
-
-  <!-- Facebook (placeholder) -->
-  <a class="btn" href="https://facebook.com/" target="_blank" rel="noopener">
-    <div class="icon">FB</div>
-    <div class="label">Facebook</div>
-    <div class="small">Page</div>
-  </a>
-
-  <!-- Discord (placeholder) -->
-  <a class="btn" href="https://discord.com/" target="_blank" rel="noopener">
-    <div class="icon">DC</div>
-    <div class="label">Discord</div>
-    <div class="small">Community</div>
-  </a>
-
-  <footer>
-    Made by Fractod · All links open in a new tab
-  </footer>
 </body>
 </html>
