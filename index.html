@@ -1,83 +1,136 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Fractod — Links</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fractod Links</title>
   <style>
-    :root{
-      --bg:#000; --card:#0b0b0b; --text:#fff; --muted:#9a9a9a;
-      --accent:#FFD600; --btn-h:56px;
-      --shadow:0 12px 30px rgba(0,0,0,.55);
-      --t:.28s cubic-bezier(.22,.61,.36,1);
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
     }
-    *{box-sizing:border-box} html,body{height:100%}
-    body{margin:0;background:radial-gradient(1200px 800px at 50% -20%,rgba(255,214,0,.06),transparent 60%),#000;color:#fff;font:16px/1.5 Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif}
-    .wrap{min-height:100%;display:flex;align-items:center;justify-content:center;padding:28px}
-    .card{width:100%;max-width:720px;background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.015));border-radius:24px;padding:28px;box-shadow:var(--shadow)}
-    .brand{display:flex;flex-direction:column;align-items:center;gap:10px;margin-bottom:16px}
-    .logo{width:128px;height:128px;border-radius:50%;display:grid;place-items:center;background:#000;border:2px solid rgba(255,214,0,.25);overflow:hidden;box-shadow:0 6px 18px rgba(0,0,0,.45)}
-    .logo img{width:96%;height:96%;object-fit:contain;display:block}
-    .title{font-weight:800;font-size:28px;margin:6px 0}
-    .sub{color:var(--muted);font-size:13px;margin-bottom:8px}
-    .links{display:flex;flex-direction:column;gap:12px;margin-top:8px}
-    .btn{height:var(--btn-h);display:flex;align-items:center;gap:14px;padding:0 16px;border-radius:14px;text-decoration:none;color:#fff;background:#111;transition:transform var(--t), box-shadow var(--t), background var(--t)}
-    .btn:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(255,214,0,.22)}
-    .icon{width:28px;height:28px;display:grid;place-items:center;border-radius:8px;background:rgba(255,214,0,.12);color:var(--accent);flex-shrink:0}
-    .icon i{font-size:16px}
-    .label{flex:1;font-weight:700}
-    .hint{color:var(--muted);font-size:12px}
-    @media (max-width:420px){.logo{width:110px;height:110px}.title{font-size:22px}.btn{height:52px}}
-    footer{margin-top:18px;text-align:center;color:var(--muted);font-size:12px}
+
+    .logo-container {
+      margin-top: 30px;
+    }
+
+    .logo-container img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 3px solid gold;
+      object-fit: cover;
+    }
+
+    h1 {
+      margin: 15px 0 5px;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    p.tagline {
+      color: #bbb;
+      margin-bottom: 30px;
+    }
+
+    .link-card {
+      background: #111;
+      border-radius: 10px;
+      margin: 12px auto;
+      padding: 14px 18px;
+      width: 320px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #fff;
+      text-decoration: none;
+      transition: transform 0.2s, background 0.3s;
+    }
+
+    .link-card:hover {
+      background: #222;
+      transform: scale(1.02);
+    }
+
+    .left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .icon {
+      font-size: 20px;
+      width: 26px;
+      height: 26px;
+      text-align: center;
+      line-height: 26px;
+      border-radius: 5px;
+      background: #333;
+    }
+
+    footer {
+      margin: 30px 0;
+      font-size: 13px;
+      color: #888;
+    }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <div class="card">
-      <header class="brand">
-        <!-- PNG-аа repo-ийн root-д энэ нэрээр байрлуул; өөр нэртэй бол доорх src-г тааруул -->
-        <div class="logo">
-          <img src="fractod_symbol_transparent_final.png" alt="Fractod logo">
-        </div>
-        <div class="title">Fractod</div>
-        <div class="sub">Fractals · Trading · Growth</div>
-      </header>
 
-      <main class="links">
-        <a class="btn" href="https://t.me/fractod13" target="_blank" rel="noopener">
-          <span class="icon"><i class="fa-brands fa-telegram"></i></span>
-          <span class="label">Telegram</span>
-          <span class="hint">Channel</span>
-        </a>
-
-        <a class="btn" href="https://www.instagram.com/fractod_/?hl=en" target="_blank" rel="noopener">
-          <span class="icon"><i class="fa-brands fa-instagram"></i></span>
-          <span class="label">Instagram</span>
-          <span class="hint">@fractod_</span>
-        </a>
-
-        <a class="btn" href="https://youtube.com/@fractod?si=DwtgTw_GSh7q1e8e" target="_blank" rel="noopener">
-          <span class="icon"><i class="fa-brands fa-youtube"></i></span>
-          <span class="label">YouTube</span>
-          <span class="hint">Channel</span>
-        </a>
-
-        <a class="btn" href="https://facebook.com/" target="_blank" rel="noopener">
-          <span class="icon"><i class="fa-brands fa-facebook"></i></span>
-          <span class="label">Facebook</span>
-          <span class="hint">Page</span>
-        </a>
-
-        <a class="btn" href="https://discord.com/" target="_blank" rel="noopener">
-          <span class="icon"><i class="fa-brands fa-discord"></i></span>
-          <span class="label">Discord</span>
-          <span class="hint">Community</span>
-        </a>
-      </main>
-
-      <footer>Made by Fractod · All links open in a new tab</footer>
-    </div>
+  <div class="logo-container">
+    <img src="fractod_symbol.png" alt="Fractod logo">
   </div>
+
+  <h1>Fractod</h1>
+  <p class="tagline">Fractals · Trading · Growth</p>
+
+  <a href="https://t.me/fractod13" target="_blank" class="link-card">
+    <div class="left">
+      <div class="icon">📩</div>
+      <span>Telegram</span>
+    </div>
+    <span>fractod13</span>
+  </a>
+
+  <a href="https://www.instagram.com/fractod_/?hl=en" target="_blank" class="link-card">
+    <div class="left">
+      <div class="icon">📸</div>
+      <span>Instagram</span>
+    </div>
+    <span>@fractod_</span>
+  </a>
+
+  <a href="https://youtube.com/@fractod?si=DwtgTw_GSh7q1e8e" target="_blank" class="link-card">
+    <div class="left">
+      <div class="icon">▶️</div>
+      <span>YouTube</span>
+    </div>
+    <span>@fractod</span>
+  </a>
+
+  <a href="https://facebook.com" target="_blank" class="link-card">
+    <div class="left">
+      <div class="icon">📘</div>
+      <span>Facebook</span>
+    </div>
+    <span>Page</span>
+  </a>
+
+  <a href="https://discord.com" target="_blank" class="link-card">
+    <div class="left">
+      <div class="icon">🎮</div>
+      <span>Discord</span>
+    </div>
+    <span>Community</span>
+  </a>
+
+  <footer>
+    Made by Fractod · All links open in a new tab
+  </footer>
+
 </body>
 </html>
