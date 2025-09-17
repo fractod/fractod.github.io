@@ -12,40 +12,106 @@
       text-align: center;
       padding: 50px;
     }
-    .logo {
-      font-size: 40px;
-      color: gold;
-      margin-bottom: 20px;
-      font-weight: bold;
+    .logo img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 2px solid gold;
+      margin-bottom: 15px;
     }
-    a {
-      display: block;
+    h1 {
+      font-size: 28px;
+      margin: 10px 0 5px 0;
+    }
+    .subtitle {
+      color: #aaa;
+      font-size: 14px;
+      margin-bottom: 25px;
+    }
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 300px;
       margin: 10px auto;
-      width: 250px;
-      padding: 12px;
-      background: gold;
-      color: black;
+      padding: 12px 15px;
+      background: #111;
+      border: 1px solid #333;
+      border-radius: 8px;
       text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
+      color: #fff;
       transition: 0.3s;
     }
-    a:hover {
-      background: purple;
-      color: #fff;
+    .btn:hover {
+      background: gold;
+      color: #000;
       transform: scale(1.05);
+    }
+    .icon {
+      font-weight: bold;
+      width: 40px;
+      text-align: left;
+    }
+    .label {
+      flex: 1;
+      text-align: left;
+      font-weight: bold;
+    }
+    .small {
+      font-size: 12px;
+      color: #aaa;
+    }
+    footer {
+      margin-top: 40px;
+      font-size: 12px;
+      color: #666;
     }
   </style>
 </head>
 <body>
-  <div class="logo">🌀 FRACTOD</div>
-  <h2>Connect with me</h2>
+  <div class="logo">
+    <img src="fractod_symbol.png" alt="Fractod logo">
+  </div>
+  <h1>Fractod</h1>
+  <div class="subtitle">Fractals · Trading · Growth</div>
 
-  <a href="https://facebook.com/" target="_blank">🌐 Facebook</a>
-  <a href="https://www.instagram.com/fractod_/?hl=en" target="_blank">📸 Instagram</a>
-  <a href="https://t.me/fractod13" target="_blank">✈️ Telegram</a>
-  <a href="https://discord.com/" target="_blank">💬 Discord</a>
-  <a href="https://youtube.com/@fractod?si=DwtgTw_GSh7q1e8e" target="_blank">▶️ YouTube</a>
+  <!-- Telegram -->
+  <a class="btn" href="https://t.me/fractod13" target="_blank" rel="noopener">
+    <div class="icon">TG</div>
+    <div class="label">Telegram</div>
+    <div class="small">Channel</div>
+  </a>
 
+  <!-- Instagram -->
+  <a class="btn" href="https://www.instagram.com/fractod_/?hl=en" target="_blank" rel="noopener">
+    <div class="icon">IG</div>
+    <div class="label">Instagram</div>
+    <div class="small">@fractod_</div>
+  </a>
+
+  <!-- YouTube -->
+  <a class="btn" href="https://youtube.com/@fractod?si=DwtgTw_GSh7q1e8e" target="_blank" rel="noopener">
+    <div class="icon">YT</div>
+    <div class="label">YouTube</div>
+    <div class="small">Channel</div>
+  </a>
+
+  <!-- Facebook (placeholder) -->
+  <a class="btn" href="https://facebook.com/" target="_blank" rel="noopener">
+    <div class="icon">FB</div>
+    <div class="label">Facebook</div>
+    <div class="small">Page</div>
+  </a>
+
+  <!-- Discord (placeholder) -->
+  <a class="btn" href="https://discord.com/" target="_blank" rel="noopener">
+    <div class="icon">DC</div>
+    <div class="label">Discord</div>
+    <div class="small">Community</div>
+  </a>
+
+  <footer>
+    Made by Fractod · All links open in a new tab
+  </footer>
 </body>
 </html>
