@@ -1,116 +1,138 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Fractod — Links</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Fractod — Links</title>
 
-<!-- Font Awesome (icons) -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <!-- Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
-<style>
-  :root{
-    --bg:#000; --card:#111; --text:#fff; --muted:#b8b8b8; --accent:#FFD600;
-    --btn-h:60px; --radius:14px;
-  }
-  *{box-sizing:border-box}
-  html,body{height:100%}
-  body{
-    margin:0; color:var(--text);
-    font:16px/1.55 Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;
-    background: radial-gradient(1200px 800px at 50% -20%, rgba(255,214,0,.08), transparent 60%), var(--bg);
-    display:flex; align-items:center; justify-content:center; padding:32px;
-  }
+  <!-- Social preview (optional) -->
+  <meta property="og:title" content="Fractod — Links">
+  <meta property="og:description" content="Fractals · Trading · Growth">
+  <meta property="og:type" content="website">
 
-  .card{
-    width:100%; max-width:520px; background:var(--card);
-    border-radius:22px; padding:34px 26px 26px;
-    box-shadow: 0 0 0 1px rgba(255,214,0,.08), 0 20px 60px rgba(0,0,0,.45);
-  }
+  <style>
+    :root{
+      --bg:#000; --text:#fff; --muted:#a6a6a6; --accent:#FFD600;
+      --card:#0f0f0f; --ring:rgba(255,255,255,.06);
+      --btn-h:64px; --radius:18px; --t:.25s ease;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; color:var(--text);
+      font:16px/1.55 Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;
+      background:
+        radial-gradient(1200px 800px at 50% -25%, rgba(255,214,0,.08), transparent 60%),
+        var(--bg);
+      display:flex; align-items:center; justify-content:center; padding:28px;
+    }
 
-  /* === LOGO (full) === */
-  .logo{
-    width:160px; height:160px; margin:0 auto 18px; border-radius:50%;
-    background-image:url('./fractod_logo.png');     /* <-- ТАНЫ шинэ нэр */
-    background-size:cover;                          /* бүтнээр дүүргэнэ */
-    background-position:center;
-    border:3px solid var(--accent);
-    box-shadow:0 10px 24px rgba(0,0,0,.35);
-  }
+    .wrap{width:100%; max-width:740px}
+    .profile{
+      display:flex; flex-direction:column; align-items:center; gap:12px; margin-bottom:10px;
+    }
+    .avatar{
+      width:140px; height:140px; border-radius:50%; overflow:hidden;
+      background:#000 url('./fractod_logo.png') center/cover no-repeat;
+      border:3px solid var(--accent);
+      box-shadow:0 10px 28px rgba(0,0,0,.45);
+    }
+    h1{margin:0; font-size:32px; font-weight:800; letter-spacing:.3px}
+    .sub{color:var(--muted); font-size:14px; margin-bottom:6px}
 
-  .title{font-weight:800; font-size:32px; text-align:center; margin:6px 0 4px}
-  .sub{color:var(--muted); text-align:center; margin-bottom:18px}
+    .links{
+      display:flex; flex-direction:column; gap:14px; margin-top:18px;
+    }
+    .link{
+      height:var(--btn-h);
+      display:flex; align-items:center; gap:14px;
+      padding:0 18px; border-radius:var(--radius);
+      text-decoration:none; color:var(--text);
+      background:linear-gradient(180deg, #151515, #0f0f0f);
+      box-shadow:0 0 0 1px var(--ring), inset 0 -2px 0 rgba(255,255,255,.03);
+      transition:transform var(--t), box-shadow var(--t), background var(--t);
+    }
+    .link:hover{ transform:translateY(-3px); box-shadow:0 14px 28px rgba(255,214,0,.16)}
+    .ico{
+      width:40px; height:40px; border-radius:12px;
+      display:grid; place-items:center; flex-shrink:0;
+      background:rgba(255,214,0,.12); color:var(--accent);
+    }
+    .ico i{font-size:18px; line-height:1; color:var(--accent)}
+    .label{font-weight:800; font-size:16px; flex:1; text-align:left}
+    .hint{color:#cfcfcf; font-size:13px}
 
-  .links{display:flex; flex-direction:column; gap:14px}
+    /* Divider / section title */
+    .section{margin:14px 0 2px; color:#cfcfcf; font-size:13px; text-align:center; opacity:.85}
 
-  .btn{
-    display:flex; align-items:center; gap:14px;
-    background:#171717; height:var(--btn-h); padding:0 16px;
-    border-radius:var(--radius); text-decoration:none; color:#fff;
-    box-shadow: inset 0 0 0 1px rgba(255,255,255,.04);
-    transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
-  }
-  .btn:hover{ background:#1f1f1f; transform:translateY(-2px);
-              box-shadow:0 12px 22px rgba(255,214,0,.12); }
+    /* Disabled row (e.g., Facebook name only) */
+    .link.is-disabled{opacity:.7; cursor:default}
+    .link.is-disabled:hover{transform:none; box-shadow:0 0 0 1px var(--ring)}
+    footer{margin-top:18px; text-align:center; color:var(--muted); font-size:12px}
 
-  /* icons (ALWAYS GOLD) */
-  .ico{ width:32px; height:32px; display:grid; place-items:center;
-        border-radius:10px; background:rgba(255,214,0,.12); color:var(--accent); flex-shrink:0; }
-  .ico i{ font-size:18px; line-height:1; color:var(--accent); }
-
-  .label{font-weight:700; font-size:16px; flex:1}
-  .hint{color:#cfcfcf; font-size:13px}
-
-  footer{margin-top:20px; text-align:center; color:var(--muted); font-size:12px}
-  @media (max-width:420px){
-    .logo{width:140px;height:140px}
-    .title{font-size:28px}
-    .btn{height:56px}
-  }
-</style>
+    @media (max-width:420px){
+      .avatar{width:120px;height:120px}
+      h1{font-size:26px}
+      .link{height:58px}
+    }
+  </style>
 </head>
 <body>
-  <div class="card">
-    <div class="logo"></div>
-    <div class="title">Fractod</div>
-    <div class="sub">Fractals · Trading · Growth</div>
+  <div class="wrap">
+    <header class="profile">
+      <div class="avatar" aria-label="Fractod logo"></div>
+      <h1>Fractod</h1>
+      <div class="sub">Fractals · Trading · Growth</div>
+    </header>
 
-    <div class="links">
-      <!-- Telegram -->
-      <a class="btn" href="https://t.me/fractod13" target="_blank" rel="noopener">
+    <main class="links">
+      <!-- Primary links -->
+      <a class="link" href="https://t.me/fractod13" target="_blank" rel="noopener">
         <span class="ico"><i class="fa-brands fa-telegram"></i></span>
         <span class="label">Telegram</span>
         <span class="hint">@fractod13</span>
       </a>
 
-      <!-- Instagram -->
-      <a class="btn" href="https://www.instagram.com/fractod_/?hl=en" target="_blank" rel="noopener">
+      <a class="link" href="https://www.instagram.com/fractod_/?hl=en" target="_blank" rel="noopener">
         <span class="ico"><i class="fa-brands fa-instagram"></i></span>
         <span class="label">Instagram</span>
         <span class="hint">@fractod_</span>
       </a>
 
-      <!-- YouTube -->
-      <a class="btn" href="https://youtube.com/@fractod?si=DwtgTw_GSh7q1e8e" target="_blank" rel="noopener">
+      <a class="link" href="https://youtube.com/@fractod?si=DwtgTw_GSh7q1e8e" target="_blank" rel="noopener">
         <span class="ico"><i class="fa-brands fa-youtube"></i></span>
         <span class="label">YouTube</span>
         <span class="hint">@fractod</span>
       </a>
 
-      <!-- Facebook (name only) -->
-      <div class="btn" style="cursor:default">
+      <a class="link" href="https://discord.gg/ke3CracU" target="_blank" rel="noopener">
+        <span class="ico"><i class="fa-brands fa-discord"></i></span>
+        <span class="label">Discord</span>
+        <span class="hint">Fractal Trade</span>
+      </a>
+
+      <!-- Optional section title -->
+      <div class="section">Other</div>
+
+      <!-- Facebook (linkгүй — name only) -->
+      <div class="link is-disabled">
         <span class="ico"><i class="fa-brands fa-facebook-f"></i></span>
         <span class="label">Facebook</span>
         <span class="hint">Odkhuu Enkhbaatar</span>
       </div>
 
-      <!-- Discord (new link + label) -->
-      <a class="btn" href="https://discord.gg/ke3CracU" target="_blank" rel="noopener">
-        <span class="ico"><i class="fa-brands fa-discord"></i></span>
-        <span class="label">Discord</span>
-        <span class="hint">Fractal Trade</span>
+      <!-- Future CTA (жишээ) -->
+      <!--
+      <a class="link" href="https://fractod.com/course" target="_blank" rel="noopener">
+        <span class="ico"><i class="fa-solid fa-graduation-cap"></i></span>
+        <span class="label">My Trading Course</span>
+        <span class="hint">$30 · instant access</span>
       </a>
-    </div>
+      -->
+    </main>
 
     <footer>Made by Fractod · All links open in a new tab</footer>
   </div>
