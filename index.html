@@ -1,23 +1,31 @@
-<style>
-  :root{
-    --bg:#000; --card:#111; --text:#fff; --muted:#b9b9b9; --accent:#FFD600;
-  }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Fractod — Links</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
 
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{
-    font-family:Inter,system-ui,sans-serif;
-    color:var(--text);
-    min-height:100vh; padding:36px 18px;
-    display:flex; flex-direction:column; align-items:center;
-    background:
-      radial-gradient(900px 600px at 50% -10%, rgba(255,214,0,.20), transparent 65%),
-      var(--bg);
-    position:relative; overflow-x:hidden;
-  }
-  /* ТОД спираль давхарга */
-  body::after{
-    content:""; position:fixed; inset:-20% -10% -20% -10%; pointer-events:none; z-index:-1;
-    background:url('data:image/svg+xml;utf8,\
+  <style>
+    :root{
+      --bg:#000; --card:#111; --text:#fff; --muted:#b9b9b9; --accent:#FFD600;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:Inter,system-ui,sans-serif;
+      color:var(--text);
+      min-height:100vh; padding:36px 18px;
+      display:flex; flex-direction:column; align-items:center;
+      background:
+        radial-gradient(900px 600px at 50% -10%, rgba(255,214,0,.20), transparent 65%),
+        var(--bg);
+      position:relative; overflow-x:hidden;
+    }
+    /* ТОД спираль */
+    body::after{
+      content:""; position:fixed; inset:-20% -10% -20% -10%; pointer-events:none; z-index:-1;
+      background:url('data:image/svg+xml;utf8,\
 <svg xmlns="http://www.w3.org/2000/svg" viewBox=\"0 0 1600 1100\">\
   <g stroke=\"#FFD600\" stroke-opacity=\"0.16\" stroke-width=\"2\" fill=\"none\">\
     <path d=\"M800,160 C980,160 1120,300 1120,480 1120,660 980,800 800,800 620,800 480,660 480,480 480,300 620,160 800,160\"/>\
@@ -26,46 +34,86 @@
     <path d=\"M800,40  C1070,40 1300,270 1300,540 1300,810 1070,1040 800,1040 530,1040 300,810 300,540 300,270 530,40 800,40\"/>\
   </g>\
 </svg>') center -120px/1200px auto no-repeat;
-    filter:drop-shadow(0 0 18px rgba(255,214,0,.12));
-  }
+      filter:drop-shadow(0 0 18px rgba(255,214,0,.18));
+    }
 
-  /* LOGO */
-  .logo{width:160px;height:160px;border-radius:50%;overflow:hidden;
-        border:3px solid var(--accent);display:flex;align-items:center;justify-content:center;
-        margin-bottom:22px;box-shadow:0 10px 30px rgba(0,0,0,.45)}
-  .logo img{width:100%;height:100%;object-fit:contain}
+    /* LOGO */
+    .logo{width:160px;height:160px;border-radius:50%;overflow:hidden;
+          border:3px solid var(--accent);display:flex;align-items:center;justify-content:center;
+          margin-bottom:22px;box-shadow:0 10px 30px rgba(0,0,0,.45)}
+    .logo img{width:100%;height:100%;object-fit:contain}
 
-  h1{font-size:34px;font-weight:800;margin-bottom:10px;letter-spacing:.3px}
-  p.subtitle{color:var(--muted);margin-bottom:26px}
+    h1{font-size:34px;font-weight:800;margin-bottom:10px;letter-spacing:.3px}
+    p.subtitle{color:var(--muted);margin-bottom:26px}
 
-  /* LINKS */
-  .link-card{
-    width:100%; max-width:560px; background:#121212;
-    border-radius:16px; display:flex; align-items:center; justify-content:space-between;
-    padding:18px 22px; margin:12px 0; text-decoration:none; color:var(--text);
-    font-weight:700; letter-spacing:.2px;
-    box-shadow:0 0 0 1px rgba(255,255,255,.05), inset 0 -2px 0 rgba(255,255,255,.03);
-    transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
-  }
-  .link-card:hover{
-    transform:translateY(-2px);
-    box-shadow:
-      0 0 0 1px rgba(255,214,0,.28),
-      0 14px 32px rgba(255,214,0,.22);              /* ✨ шар glow */
-    background:#171717;
-  }
-  .link-left{display:flex;align-items:center;gap:14px}
-  .link-left i{color:var(--accent);font-size:22px;width:26px;text-align:center}
-  .link-right{font-size:15px;color:#d8d8d8}
+    /* LINKS */
+    .link-card{
+      width:100%; max-width:560px; background:#121212;
+      border-radius:16px; display:flex; align-items:center; justify-content:space-between;
+      padding:18px 22px; margin:12px 0; text-decoration:none; color:var(--text);
+      font-weight:700; letter-spacing:.2px;
+      box-shadow:0 0 0 1px rgba(255,255,255,.05), inset 0 -2px 0 rgba(255,255,255,.03);
+      transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+    .link-card:hover{
+      transform:translateY(-2px);
+      box-shadow:
+        0 0 0 1px rgba(255,214,0,.28),
+        0 14px 32px rgba(255,214,0,.22);   /* шар glow */
+      background:#171717;
+    }
+    .link-left{display:flex;align-items:center;gap:14px}
+    .link-left i{color:var(--accent);font-size:22px;width:26px;text-align:center}
+    .link-right{font-size:15px;color:#d8d8d8}
 
-  footer{margin-top:40px;font-size:13px;color:#a7a7a7}
+    footer{margin-top:40px;font-size:13px;color:#a7a7a7}
 
-  /* GitHub header/menu-г нуух */
-  .octicon,.avatar,.dropdown-caret,.Header-item{display:none !important}
+    /* GitHub header/profile icon-уудыг нуух */
+    .octicon,.avatar,.dropdown-caret,.Header-item{display:none !important}
 
-  @media (max-width:420px){
-    .logo{width:140px;height:140px}
-    h1{font-size:28px}
-    .link-card{padding:16px 18px}
-  }
-</style>
+    @media (max-width:420px){
+      .logo{width:140px;height:140px}
+      h1{font-size:28px}
+      .link-card{padding:16px 18px}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="logo">
+    <img src="fractod_logo.png" alt="Fractod Logo"/>
+  </div>
+
+  <h1>Fractod</h1>
+  <p class="subtitle">Fractals · Trading · Growth</p>
+
+  <!-- LINKS -->
+  <a class="link-card" href="https://t.me/fractod13" target="_blank">
+    <div class="link-left"><i class="fa-brands fa-telegram"></i>Telegram</div>
+    <div class="link-right">@fractod13</div>
+  </a>
+
+  <a class="link-card" href="https://www.instagram.com/fractod_/" target="_blank">
+    <div class="link-left"><i class="fa-brands fa-instagram"></i>Instagram</div>
+    <div class="link-right">@fractod_</div>
+  </a>
+
+  <a class="link-card" href="https://youtube.com/@fractod" target="_blank">
+    <div class="link-left"><i class="fa-brands fa-youtube"></i>YouTube</div>
+    <div class="link-right">@fractod</div>
+  </a>
+
+  <a class="link-card" href="https://discord.gg/ke3CracU" target="_blank">
+    <div class="link-left"><i class="fa-brands fa-discord"></i>Discord</div>
+    <div class="link-right">Fractal Trade</div>
+  </a>
+
+  <a class="link-card" href="https://www.facebook.com/people/Odkhuu-Enkhbaatar/pfbid02SjDwG9ZTVcukaNMAFaEyJonBS3M4Hk4myw4THzJJVmGoq5jBT9xomkZkV6H5iuJxl/" target="_blank">
+    <div class="link-left"><i class="fa-brands fa-facebook"></i>Facebook</div>
+    <div class="link-right">Odkhuu Enkhbaatar</div>
+  </a>
+
+  <footer>Made by Fractod · All links open in a new tab</footer>
+
+</body>
+</html>
