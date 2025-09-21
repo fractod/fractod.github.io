@@ -1,152 +1,159 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Fractod — Links</title>
 
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+  <!-- Font Awesome (icons) -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0; color:var(--text);
-      font:16px/1.55 Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;
-      background: var(--bg);
-      display:flex; align-items:flex-start; justify-content:center; padding:28px;
-      min-height:100svh;
-    }
-
-    /* --- GOLDEN SPIRAL BACKGROUND LAYER --- */
-    body::before{
-      content:"";
-      position:fixed; inset:0;
-      pointer-events:none;
-      /* base vignette + soft glow */
-      background:
-        radial-gradient(1200px 900px at 50% -15%, rgba(255,214,0,.10), transparent 60%),
-        radial-gradient(1200px 900px at 50% 120%, rgba(0,0,0,.55), transparent 40%);
-      z-index:-2;
-    }
-    body::after{
-      /* inline SVG: golden logarithmic spirals (very subtle) */
-      content:"";
-      position:fixed; inset:0;
-      background:
-        url('data:image/svg+xml;utf8,\
-<svg xmlns="http://www.w3.org/2000/svg" viewBox=\"0 0 1600 1000\">\
-  <g stroke=\"#FFD600\" stroke-opacity=\"0.09\" stroke-width=\"2\" fill=\"none\">\
-    <path d=\"M800,160 C980,160 1120,300 1120,480 1120,660 980,800 800,800 620,800 480,660 480,480 480,300 620,160 800,160\"/>\
-    <path d=\"M800,120 C1010,120 1180,290 1180,500 1180,710 1010,880 800,880 590,880 420,710 420,500 420,290 590,120 800,120\"/>\
-    <path d=\"M800,80  C1040,80 1240,280 1240,520 1240,760 1040,960 800,960 560,960 360,760 360,520 360,280 560,80 800,80\"/>\
-    <path d=\"M800,40  C1070,40 1300,270 1300,540 1300,810 1070,1040 800,1040 530,1040 300,810 300,540 300,270 530,40 800,40\"/>\
-  </g>\
-</svg>') center -120px / 1200px auto no-repeat;
-      filter: blur(.3px);
-      z-index:-1;
-      opacity:.95;
-      pointer-events:none;
+  <style>
+    :root {
+      --bg: #000;
+      --card: #111;
+      --text: #fff;
+      --muted: #aaa;
+      --accent: #FFD600;
     }
 
-    .wrap{width:100%; max-width:740px; margin:auto}
-
-    .profile{
-      display:flex; flex-direction:column; align-items:center; gap:12px; margin:12px 0 10px;
-    }
-    .avatar{
-      width:140px; height:140px; border-radius:50%; overflow:hidden;
-      background:#000 url('./fractod_logo.png') center/cover no-repeat;
-      border:3px solid var(--accent);
-      box-shadow:0 10px 28px rgba(0,0,0,.45);
-    }
-    h1{margin:0; font-size:32px; font-weight:800; letter-spacing:.3px}
-    .sub{color:var(--muted); font-size:14px; margin-bottom:4px}
-
-    .links{
-      display:flex; flex-direction:column; gap:14px; margin-top:18px;
-    }
-    .link{
-      height:var(--btn-h);
-      display:flex; align-items:center; gap:14px;
-      padding:0 18px; border-radius:var(--radius);
-      text-decoration:none; color:var(--text);
-      background:linear-gradient(180deg, #151515, #0f0f0f);
-      box-shadow:0 0 0 1px var(--ring), inset 0 -2px 0 rgba(255,255,255,.03);
-      transition:transform var(--t), box-shadow var(--t), background var(--t);
-    }
-    .link:hover{ transform:translateY(-3px); box-shadow:0 14px 28px rgba(255,214,0,.16)}
-    .ico{
-      width:40px; height:40px; border-radius:12px;
-      display:grid; place-items:center; flex-shrink:0;
-      background:rgba(255,214,0,.12); color:var(--accent);
-    }
-    .ico i{font-size:18px; line-height:1; color:var(--accent)}
-    .label{font-weight:800; font-size:16px; flex:1; text-align:left}
-    .hint{color:#cfcfcf; font-size:13px}
-
-    .section{margin:14px 0 2px; color:#cfcfcf; font-size:13px; text-align:center; opacity:.85}
-
-    .link.is-disabled{opacity:.7; cursor:default}
-    .link.is-disabled:hover{transform:none; box-shadow:0 0 0 1px var(--ring)}
-
-    /* --- FOOTER: center bottom --- */
-    footer{
-      position:fixed; left:50%; bottom:18px; transform:translateX(-50%);
-      width:calc(100% - 40px); max-width:740px;
-      text-align:center; color:var(--muted); font-size:12px; opacity:.9;
-      pointer-events:none; /* hover саад болохгүй */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    @media (max-width:420px){
-      .avatar{width:120px;height:120px}
-      h1{font-size:26px}
-      .link{height:58px}
+    body {
+      font-family: Inter, system-ui, sans-serif;
+      background: radial-gradient(circle at top, rgba(255,214,0,0.08), transparent 70%), var(--bg);
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      padding: 32px 16px;
+    }
+
+    /* Logo */
+    .logo {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    p.subtitle {
+      color: var(--muted);
+      margin-bottom: 32px;
+    }
+
+    /* Card Links */
+    .link-card {
+      width: 100%;
+      max-width: 480px;
+      background: var(--card);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 20px;
+      margin: 10px 0;
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+    .link-card:hover {
+      transform: scale(1.02);
+      background: #1a1a1a;
+    }
+    .link-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .link-left i {
+      color: var(--accent);
+      font-size: 20px;
+      width: 24px;
+      text-align: center;
+    }
+    .link-right {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 40px;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    /* ✨ GitHub Pages дээр гардаг профайл/toolbar-ыг нуух */
+    .octicon,
+    .avatar,
+    .dropdown-caret,
+    .Header-item {
+      display: none !important;
     }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <header class="profile">
-      <div class="avatar" aria-label="Fractod logo"></div>
-      <h1>Fractod</h1>
-      <div class="sub">Fractals · Trading · Growth</div>
-    </header>
-
-    <main class="links">
-      <a class="link" href="https://t.me/fractod13" target="_blank" rel="noopener">
-        <span class="ico"><i class="fa-brands fa-telegram"></i></span>
-        <span class="label">Telegram</span>
-        <span class="hint">Fractod Trade</span>
-      </a>
-
-      <a class="link" href="https://www.instagram.com/fractod_/?hl=en" target="_blank" rel="noopener">
-        <span class="ico"><i class="fa-brands fa-instagram"></i></span>
-        <span class="label">Instagram</span>
-        <span class="hint">fractod_</span>
-      </a>
-
-      <a class="link" href="https://youtube.com/@fractod?si=DwtgTw_GSh7q1e8e" target="_blank" rel="noopener">
-        <span class="ico"><i class="fa-brands fa-youtube"></i></span>
-        <span class="label">YouTube</span>
-        <span class="hint">Fractod</span>
-      </a>
-
-      <a class="link" href="https://discord.gg/ke3CracU" target="_blank" rel="noopener">
-        <span class="ico"><i class="fa-brands fa-discord"></i></span>
-        <span class="label">Discord</span>
-        <span class="hint">Fractod Trade</span>
-      </a>
-
-
-      <a class="link" href="https://www.facebook.com/share/17K7E45bTa/?mibextid=wwXIfr" target="_blank" rel="noopener">
-        <span class="ico"><i class="fa-brands fa-facebook-f"></i></span>
-        <span class="label">Facebook</span>
-        <span class="hint">Odkhuu Enkhbaatar</span>
-      </div>
-    </main>
+  <!-- Logo -->
+  <div class="logo">
+    <img src="fractod_logo.png" alt="Fractod logo">
   </div>
 
-  <footer>Made by Fractod · All links open in a new tab</footer>
+  <!-- Title -->
+  <h1>Fractod</h1>
+  <p class="subtitle">Fractals · Trading · Growth</p>
+
+  <!-- Links -->
+  <a class="link-card" href="https://t.me/fractod13" target="_blank">
+    <div class="link-left"><i class="fab fa-telegram"></i>Telegram</div>
+    <div class="link-right">@fractod13</div>
+  </a>
+
+  <a class="link-card" href="https://www.instagram.com/fractod_/" target="_blank">
+    <div class="link-left"><i class="fab fa-instagram"></i>Instagram</div>
+    <div class="link-right">@fractod_</div>
+  </a>
+
+  <a class="link-card" href="https://youtube.com/@fractod" target="_blank">
+    <div class="link-left"><i class="fab fa-youtube"></i>YouTube</div>
+    <div class="link-right">@fractod</div>
+  </a>
+
+  <a class="link-card" href="https://discord.gg/ke3CracU" target="_blank">
+    <div class="link-left"><i class="fab fa-discord"></i>Discord</div>
+    <div class="link-right">Fractal Trade</div>
+  </a>
+
+  <a class="link-card" href="https://www.facebook.com/people/Odkhuu-Enkhbaatar/pfbid02SjDwG9ZTVcukaNMAFaEyJonBS3M4Hk4myw4THzJJVmGoq5jBT9xomkZkV6H5iuJxl/" target="_blank">
+    <div class="link-left"><i class="fab fa-facebook"></i>Facebook</div>
+    <div class="link-right">Odkhuu Enkhbaatar</div>
+  </a>
+
+  <!-- Footer -->
+  <footer>
+    Made by Fractod · All links open in a new tab
+  </footer>
 </body>
 </html>
